@@ -241,7 +241,7 @@ const Index = () => {
                   "Design de sobrancelhas personalizado",
                   "Design de sobrancelhas com linha",
                   "Brow lamination",
-                  "Embelezamento de sobrancelhas",
+                  "Henna para sobrancelhas",
                   "Permanente de cílios",
                 ],
               },
