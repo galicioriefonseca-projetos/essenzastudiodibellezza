@@ -43,6 +43,7 @@ export const services: Service[] = [
   { category: "cabeleireiro", name: "Alisamento e queratina", description: "Tratamentos com queratina para fios alinhados, brilhantes e saudáveis." },
   { category: "cabeleireiro", name: "Cuidados para cachos", description: "Hidratação e finalização especializada para cabelos cacheados." },
   { category: "cabeleireiro", name: "Tratamento para crescimento", description: "Protocolos específicos para fortalecer e estimular o crescimento capilar." },
+  { category: "cabeleireiro", name: "Hidratação capilar", description: "Reposição profunda de nutrientes para fios macios, brilhantes e saudáveis." },
   { category: "cabeleireiro", name: "Tranças", description: "Tranças clássicas e modernas com acabamento delicado." },
   { category: "cabeleireiro", name: "Penteados", description: "Penteados sofisticados para festas, formaturas e ocasiões especiais." },
   { category: "cabeleireiro", name: "Penteado de noiva", description: "Penteado exclusivo para o seu grande dia, com prova prévia opcional." },
@@ -70,18 +71,24 @@ export const services: Service[] = [
   { category: "sobrancelhas", name: "Design de sobrancelhas", description: "Design personalizado para realçar a sua expressão facial e identidade." },
   { category: "sobrancelhas", name: "Design com linha", description: "Técnica de epilação com linha para um traçado definido e duradouro." },
   { category: "sobrancelhas", name: "Brow lamination", description: "Alinhamento moderno que valoriza o formato natural das sobrancelhas." },
-  { category: "sobrancelhas", name: "Embelezamento de sobrancelhas", description: "Procedimento completo com simetria, naturalidade e técnica profissional." },
+  { category: "sobrancelhas", name: "Henna para sobrancelhas", description: "Coloração temporária para preencher falhas e realçar o desenho." },
   { category: "sobrancelhas", name: "Permanente de cílios", description: "Curvatura definida e olhar marcante por semanas, sem produtos diários." },
 
   // Maquiagem
   { category: "maquiagem", name: "Maquiagem para eventos", description: "Acabamento sofisticado e alta durabilidade para festas e formaturas." },
   { category: "maquiagem", name: "Maquiagem para noivas", description: "Beleza atemporal, prova prévia e acabamento à prova de emoção." },
   { category: "maquiagem", name: "Maquiagem social", description: "Visual elegante para encontros, jantares e ocasiões especiais." },
+  { category: "maquiagem", name: "Maquiagem para madrinhas", description: "Harmonia visual com a noiva, com técnica e durabilidade impecáveis." },
+  { category: "maquiagem", name: "Maquiagem para ensaios", description: "Visual fotogênico pensado para ensaios fotográficos e gestantes." },
+  { category: "maquiagem", name: "Maquiagem express", description: "Atendimento rápido para um visual pronto em qualquer ocasião." },
+  { category: "maquiagem", name: "Prova de maquiagem para noivas", description: "Teste prévio para definir o visual perfeito para o grande dia." },
 
   // Experiências do Salão
   { category: "salao", name: "Atendimento VIP", description: "Experiência exclusiva, com privacidade, conforto e serviços personalizados." },
   { category: "salao", name: "Salão infantil", description: "Ambiente acolhedor para cortes e cuidados leves para crianças." },
   { category: "salao", name: "Atendimento noturno", description: "Flexibilidade de horário sem abrir mão da exclusividade Essenza." },
+  { category: "salao", name: "Day Spa de beleza", description: "Combinação de serviços para um dia completo de cuidados pessoais." },
+  { category: "salao", name: "Pacote noiva", description: "Cronograma exclusivo com cabelo, maquiagem, unhas e bem-estar para o grande dia." },
   { category: "salao", name: "Agendamento on-line", description: "Reserve seu horário com praticidade pelo WhatsApp." },
 
   // Loja
