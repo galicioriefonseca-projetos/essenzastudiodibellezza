@@ -55,7 +55,7 @@ const Index = () => {
                 Harmonia,<br />Beleza<br /><em className="text-accent">e Bem-Estar</em>
               </h1>
               <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
-                Venha viver a experiência Essenza em Fernandópolis. Cabelo, estética, unhas e cuidados exclusivos em um ambiente acolhedor e moderno.
+                Venha viver a experiência Essenza em Fernandópolis. Cabelo, maquiagem, unhas, sobrancelhas e cuidados exclusivos em um ambiente acolhedor e moderno.
               </p>
               <div className="mt-10">
                 <Button asChild variant="outline" size="lg"
@@ -78,9 +78,9 @@ const Index = () => {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { icon: Scissors, label: "Cabelo" },
-                { icon: Sparkles, label: "Estética" },
+                { icon: Brush, label: "Maquiagem" },
                 { icon: Hand, label: "Unhas" },
-                { icon: Flower2, label: "Massagem" },
+                { icon: Eye, label: "Sobrancelhas" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-secondary/60 transition-colors">
                   <div className="w-14 h-14 rounded-full border border-accent/40 flex items-center justify-center text-accent">
@@ -138,11 +138,19 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-6 items-stretch">
               <div className="rounded-2xl overflow-hidden min-h-[320px] shadow-card">
                 <iframe
-                  title="Mapa Essenza Fernandópolis"
-                  src="https://www.google.com/maps?q=Fernand%C3%B3polis%2C%20SP&output=embed"
+                  title="Mapa Essenza Studio di Bellezza - Fernandópolis"
+                  src="https://www.google.com/maps?q=Essenza+Studio+di+Bellezza+Fernandopolis&output=embed"
                   className="w-full h-full min-h-[320px] grayscale-[20%]"
                   loading="lazy"
                 />
+                <a
+                  href="https://www.google.com/maps/place/Essenza+%7C+Studio+di+Bellezza/@-20.2756971,-50.2446359,17z/data=!3m1!4b1!4m6!3m5!1s0x9497f70128542d11:0x35a5d58b9efd0031!8m2!3d-20.2756971!4d-50.242061!16s%2Fg%2F11wqnrlnv1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors py-3"
+                >
+                  Ver no Google Maps →
+                </a>
               </div>
               <div className="relative rounded-2xl overflow-hidden min-h-[320px]">
                 <img src={salonInterior} alt="Interior do salão Essenza" loading="lazy" width={960} height={720}
@@ -245,8 +253,11 @@ const Index = () => {
                 items: [
                   "Maquiagem para eventos e formaturas",
                   "Maquiagem para noivas",
-                  "Penteados sofisticados",
-                  "Design de sobrancelhas com linha",
+                  "Maquiagem para madrinhas",
+                  "Maquiagem social",
+                  "Maquiagem para ensaios fotográficos",
+                  "Maquiagem express",
+                  "Prova de maquiagem para noivas",
                 ],
               },
               {
@@ -258,6 +269,8 @@ const Index = () => {
                   "Salão de beleza VIP — atendimento exclusivo e privativo",
                   "Salão de beleza infantil",
                   "Serviço noturno com hora marcada",
+                  "Day Spa de beleza",
+                  "Pacote completo para noivas",
                   "Agendamento on-line",
                 ],
               },
