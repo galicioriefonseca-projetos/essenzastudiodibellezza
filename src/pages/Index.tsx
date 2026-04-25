@@ -159,6 +159,160 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Catálogo de Serviços por Categoria */}
+      <section id="servicos-completos" className="container pb-20">
+        <div className="text-center mb-12">
+          <p className="tracking-luxury text-xs uppercase text-accent mb-3">Catálogo Essenza</p>
+          <h2 className="font-serif text-4xl lg:text-5xl text-primary">Nossos Serviços</h2>
+          <div className="mx-auto mt-4 w-16 h-px bg-accent" />
+          <p className="mt-6 max-w-xl mx-auto text-muted-foreground text-sm leading-relaxed">
+            Uma curadoria completa de cuidados de alto padrão, organizados por especialidade para a sua experiência exclusiva.
+          </p>
+        </div>
+
+        <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
+          <Accordion type="single" collapsible defaultValue="cabeleireiro" className="w-full space-y-3">
+            {[
+              {
+                id: "cabeleireiro",
+                icon: Scissors,
+                title: "Cabeleireiro",
+                desc: "Cortes, colorações e tratamentos capilares de assinatura.",
+                items: [
+                  "Corte de cabelo feminino (método Tesoura de Diamante)",
+                  "Escova profissional",
+                  "Balayage personalizada",
+                  "Mechas e luzes",
+                  "Coloração de cabelo",
+                  "Cabelo ombré",
+                  "Apliques de cabelo",
+                  "Permanente e definição de cachos",
+                  "Alisamentos e tratamentos com queratina",
+                  "Cuidados para cabelos cacheados",
+                  "Crescimento capilar",
+                  "Tranças",
+                  "Penteados (incluindo coque e noiva)",
+                ],
+              },
+              {
+                id: "manicure",
+                icon: Hand,
+                title: "Manicure & Pedicure",
+                desc: "Cuidado impecável para mãos e pés, com higiene de alto padrão.",
+                items: [
+                  "Manicure tradicional",
+                  "Pedicure profissional",
+                  "Pedicure sem uso de água",
+                  "Alongamento de unhas",
+                  "Unhas de gel",
+                  "Unhas acrílicas",
+                  "Unhas esculpidas e stiletto",
+                  "Esmalte em pó",
+                  "Francesinha",
+                  "Design de unhas",
+                  "Corte e lixa de unhas",
+                  "Esfoliação e hidratação",
+                  "Massagens nas mãos e nos pés",
+                  "Troca de esmalte",
+                  "Reparo e remoção de unhas postiças",
+                  "Manicure infantil e masculina",
+                ],
+              },
+              {
+                id: "sobrancelhas",
+                icon: Eye,
+                title: "Sobrancelhas & Cílios",
+                desc: "Olhar marcante com técnicas modernas de design e laminação.",
+                items: [
+                  "Design de sobrancelhas personalizado",
+                  "Design de sobrancelhas com linha",
+                  "Brow lamination",
+                  "Embelezamento de sobrancelhas",
+                  "Permanente de cílios",
+                ],
+              },
+              {
+                id: "maquiagem",
+                icon: Brush,
+                title: "Estúdio de Maquiagem",
+                desc: "Maquiagem profissional para eventos, formaturas e noivas.",
+                items: [
+                  "Maquiagem para eventos e formaturas",
+                  "Maquiagem para noivas",
+                  "Penteados sofisticados",
+                  "Design de sobrancelhas com linha",
+                ],
+              },
+              {
+                id: "salao",
+                icon: Sparkles,
+                title: "Experiências do Salão",
+                desc: "Atendimentos exclusivos pensados para cada momento.",
+                items: [
+                  "Salão de beleza VIP — atendimento exclusivo e privativo",
+                  "Salão de beleza infantil",
+                  "Serviço noturno com hora marcada",
+                  "Agendamento on-line",
+                ],
+              },
+              {
+                id: "loja",
+                icon: ShoppingBag,
+                title: "Loja de Produtos de Beleza",
+                desc: "Produtos profissionais selecionados para prolongar seu cuidado em casa.",
+                items: [
+                  "Linha capilar profissional",
+                  "Cosméticos e finalizadores",
+                  "Cuidados para unhas",
+                  "Indicações personalizadas",
+                ],
+              },
+            ].map(({ id, icon: Icon, title, desc, items }) => (
+              <AccordionItem
+                key={id}
+                value={id}
+                className="border border-border/50 rounded-2xl px-5 lg:px-7 bg-background/50 data-[state=open]:bg-secondary/40 data-[state=open]:shadow-soft transition-colors"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="w-12 h-12 rounded-full border border-accent/40 flex items-center justify-center text-accent shrink-0">
+                      <Icon className="w-5 h-5" strokeWidth={1.2} />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-xl lg:text-2xl text-primary tracking-wide">{title}</h3>
+                      <p className="text-xs text-muted-foreground mt-1 hidden sm:block">{desc}</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <div className="ml-0 lg:ml-16 pt-2">
+                    <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2.5">
+                      {items.map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
+                          <span className="mt-2 w-1 h-1 rounded-full bg-accent shrink-0" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 pt-5 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <p className="text-xs text-muted-foreground tracking-wide">
+                        Agendamento exclusivo · Fernandópolis-SP
+                      </p>
+                      <Button asChild size="sm" variant="outline"
+                        className="border-accent/60 text-primary hover:bg-accent hover:text-accent-foreground rounded-full tracking-luxury text-[10px] uppercase">
+                        <a href="https://wa.me/5517996733303" target="_blank" rel="noreferrer">
+                          <Phone className="w-3 h-3 mr-1.5" /> Agendar pelo WhatsApp
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       {/* CTA / Agendamento */}
       <section id="agendamento" className="container pb-24">
         <div className="bg-gradient-wood rounded-[2.5rem] p-12 lg:p-20 text-center text-primary-foreground shadow-soft relative overflow-hidden">
