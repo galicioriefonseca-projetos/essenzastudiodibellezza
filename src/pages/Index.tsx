@@ -323,7 +323,7 @@ const Index = () => {
             <p className="mt-4 max-w-xl mx-auto opacity-90">Atendimento personalizado com hora marcada. Fale agora pelo WhatsApp e garanta seu horário.</p>
             <Button asChild size="lg"
               className="mt-10 bg-background text-primary hover:bg-background/90 rounded-full px-10 py-6 tracking-luxury text-xs uppercase">
-              <a href="https://wa.me/5517999990000" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
+              <a href="https://wa.me/5517996733303" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
             </Button>
           </div>
         </div>
