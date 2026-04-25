@@ -20,7 +20,7 @@ const Index = () => {
           </a>
           <nav className="hidden md:flex items-center gap-10 text-xs uppercase tracking-luxury text-muted-foreground">
             <a href="#home" className="text-accent hover:text-accent transition-colors border-b border-accent pb-1">Home</a>
-            <a href="#servicos-completos" className="hover:text-foreground transition-colors">Serviços</a>
+            <a href="/servicos" className="hover:text-foreground transition-colors">Serviços</a>
             <a href="#galeria" className="hover:text-foreground transition-colors">Galeria</a>
             <a href="#agendamento" className="hover:text-foreground transition-colors">Agendamento</a>
             <a href="#contato" className="hover:text-foreground transition-colors">Contato</a>
@@ -168,6 +168,12 @@ const Index = () => {
           <p className="mt-6 max-w-xl mx-auto text-muted-foreground text-sm leading-relaxed">
             Uma curadoria completa de cuidados de alto padrão, organizados por especialidade para a sua experiência exclusiva.
           </p>
+          <div className="mt-8">
+            <Button asChild variant="outline"
+              className="border-2 border-accent text-primary hover:bg-accent hover:text-accent-foreground rounded-full px-8 tracking-luxury text-xs uppercase">
+              <a href="/servicos">Ver catálogo completo</a>
+            </Button>
+          </div>
         </div>
 
         <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
