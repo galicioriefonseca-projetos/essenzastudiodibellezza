@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, Phone, Instagram, Scissors, Sparkles, Hand, Flower2, Quote, Palette, Eye, Brush, ShoppingBag } from "lucide-react";
 import heroModel from "@/assets/hero-model.jpg";
+import logo from "@/assets/essenza-logo.jpg";
 import gallery1 from "@/assets/gallery-hair-1.jpg";
 import gallery2 from "@/assets/gallery-hair-2.jpg";
 import galleryNails from "@/assets/gallery-nails.jpg";
@@ -14,9 +15,12 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/40">
         <div className="container flex items-center justify-between py-5">
-          <a href="#" className="flex flex-col leading-none">
-            <span className="font-serif text-3xl tracking-luxury text-primary">ESSENZA</span>
-            <span className="font-serif italic text-xs text-muted-foreground tracking-wide ml-1">Studio di Bellezza</span>
+          <a href="#" className="flex items-center gap-3 leading-none">
+            <img src={logo} alt="Essenza Studio di Bellezza logo" width={48} height={48} className="w-11 h-11 rounded-full object-cover bg-primary" />
+            <span className="flex flex-col">
+              <span className="font-serif text-3xl tracking-luxury text-primary">ESSENZA</span>
+              <span className="font-serif italic text-xs text-muted-foreground tracking-wide ml-1">Studio di Bellezza</span>
+            </span>
           </a>
           <nav className="hidden md:flex items-center gap-10 text-xs uppercase tracking-luxury text-muted-foreground">
             <a href="#home" className="text-accent hover:text-accent transition-colors border-b border-accent pb-1">Home</a>
@@ -350,7 +354,10 @@ const Index = () => {
 
       <footer className="border-t border-border/50 py-10">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground tracking-wide">
-          <span className="font-serif text-base text-primary tracking-luxury">ESSENZA · Studio di Bellezza</span>
+          <span className="flex items-center gap-2 font-serif text-base text-primary tracking-luxury">
+            <img src={logo} alt="Essenza logo" width={28} height={28} className="w-7 h-7 rounded-full object-cover bg-primary" />
+            ESSENZA · Studio di Bellezza
+          </span>
           <span>© {new Date().getFullYear()} Fernandópolis - SP. Todos os direitos reservados.</span>
         </div>
       </footer>
