@@ -11,6 +11,15 @@ import gallerySkin from "@/assets/gallery-skincare.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
 
 const Index = () => {
+  useEffect(() => {
+    const SRC = "https://elfsightcdn.com/platform.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) return;
+    const s = document.createElement("script");
+    s.src = SRC;
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
+
   return (
     <div className="min-h-screen texture-cement">
       {/* Header */}
