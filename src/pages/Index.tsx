@@ -26,6 +26,7 @@ const Index = () => {
             <a href="#home" className="text-accent hover:text-accent transition-colors border-b border-accent pb-1">Home</a>
             <a href="/servicos" className="hover:text-foreground transition-colors">Serviços</a>
             <a href="#galeria" className="hover:text-foreground transition-colors">Galeria</a>
+            <a href="#instagram" className="hover:text-foreground transition-colors">Instagram</a>
             <a href="#agendamento" className="hover:text-foreground transition-colors">Agendamento</a>
             <a href="#contato" className="hover:text-foreground transition-colors">Contato</a>
           </nav>
