@@ -117,14 +117,26 @@ const Index = () => {
           </div>
 
           {/* Depoimentos */}
-          <div className="lg:col-span-4 bg-card rounded-[2rem] p-8 shadow-card animate-fade-in">
+          <div className="lg:col-span-4 bg-card rounded-[2rem] p-8 shadow-card animate-fade-in flex flex-col">
             <h2 className="font-serif text-3xl text-primary text-center tracking-wide">AVALIAÇÕES</h2>
-            <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
-            <div className="space-y-6">
+            <div className="mx-auto mt-2 mb-3 w-12 h-px bg-accent" />
+            <div className="flex items-center justify-center gap-2 mb-6 text-xs tracking-wide text-muted-foreground">
+              <span className="flex text-gold">{"★★★★★"}</span>
+              <span>5.0 no Google</span>
+            </div>
+            <div className="space-y-5 max-h-[520px] overflow-y-auto pr-2 -mr-2">
               {[
-                { q: "Saí do Essenza me sentindo outra pessoa. Atendimento impecável e ambiente dos sonhos.", a: "Mariana C." },
-                { q: "O melhor salão de Fernandópolis. Profissionais que entendem do assunto e tratam você com carinho.", a: "Juliana R." },
-                { q: "Cada detalhe pensado para o conforto do cliente. Recomendo de olhos fechados.", a: "Camila T." },
+                { q: "Não é só sobre cabelo, unhas ou estética. É sobre como a gente se sente quando entra e, principalmente, quando sai. Como cliente, posso dizer: esse salão é o melhor da cidade porque é diferente em tudo.", a: "Loja Alice Calçados" },
+                { q: "O salão e os profissionais são maravilhosos, recepciona as clientes do jeito que merece. Além dos trabalhos que fazem, ótimos profissionais — eu indico.", a: "Ana Laura Feltrim" },
+                { q: "Melhor salão da região de Fernandópolis. Venho de Bauru semanalmente para fazer tudo que preciso no Essenza. Indico todos os profissionais de olhos fechados.", a: "Ana Carolina Sabino" },
+                { q: "Foi a experiência mais gostosa e maravilhosa da minha vida, desde o atendimento pelo WhatsApp até o fim. Amooo!!!", a: "Daniela Herrera" },
+                { q: "Atendimento impecável, ambiente acolhedor e muito profissionalismo. Experiência extremamente positiva. Recomendo!", a: "Renata D. Pereira" },
+                { q: "Excelente! Tenho me cuidado muito mais, graças ao carinho que recebo aqui!", a: "Juliana Sabino" },
+                { q: "Experiência incrível desde o início! Amo esse salão e indico!", a: "Annelise de Assis" },
+                { q: "Sensacional. Ambiente limpo, confortável e cheio de alegria. Parabéns.", a: "Thiago Mateus G. da Silva" },
+                { q: "De acolhimento ♡ Profissionalismo ♡ Troca positiva ♡", a: "Luciana Padovez" },
+                { q: "Lugar aconchegante, atendimento personalizado, profissionais de excelência.", a: "Osimara Arruda" },
+                { q: "Maravilhosa.", a: "Natiele Carvalho Valadão" },
               ].map((t, i) => (
                 <figure key={i} className="border-l-2 border-accent/60 pl-4">
                   <Quote className="w-4 h-4 text-accent mb-2" />
@@ -133,6 +145,14 @@ const Index = () => {
                 </figure>
               ))}
             </div>
+            <a
+              href="https://www.google.com/maps/place/Essenza+%7C+Studio+di+Bellezza/@-20.2756971,-50.2446359,17z/data=!3m1!4b1!4m6!3m5!1s0x9497f70128542d11:0x35a5d58b9efd0031!8m2!3d-20.2756971!4d-50.242061!16s%2Fg%2F11wqnrlnv1"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors"
+            >
+              Ver todas no Google →
+            </a>
           </div>
 
           {/* Localização (full width) */}
