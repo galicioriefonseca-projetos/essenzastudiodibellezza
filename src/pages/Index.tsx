@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, Phone, Instagram, Scissors, Sparkles, Hand, Flower2, Quote, Palette, Eye, Brush, ShoppingBag } from "lucide-react";
