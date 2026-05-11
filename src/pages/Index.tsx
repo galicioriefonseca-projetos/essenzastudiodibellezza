@@ -356,6 +356,68 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Instagram Feed */}
+      <section id="instagram" className="container pb-20">
+        <div className="text-center mb-10">
+          <p className="tracking-luxury text-xs uppercase text-accent mb-3">Siga-nos</p>
+          <h2 className="font-serif text-4xl lg:text-5xl text-primary">@essenzastudiodibellezza</h2>
+          <div className="mx-auto mt-4 w-16 h-px bg-accent" />
+          <p className="mt-6 max-w-xl mx-auto text-muted-foreground text-sm leading-relaxed">
+            Acompanhe nossos trabalhos mais recentes, bastidores e novidades direto do nosso Instagram.
+          </p>
+        </div>
+
+        <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
+          {/*
+            ====================================================================
+            COMO ATIVAR O FEED AUTOMÁTICO DO INSTAGRAM (widget gratuito):
+            ====================================================================
+            1. Crie uma conta gratuita em um destes serviços:
+               • SnapWidget   → https://snapwidget.com  (mais simples, grátis)
+               • Elfsight     → https://elfsight.com/instagram-feed-instashow
+               • EmbedSocial  → https://embedsocial.com/products/embedfeed/
+            2. Conecte a conta @essenzastudiodibellezza
+            3. Personalize o layout (recomendado: grid 4x2, sem bordas)
+            4. Copie o código <iframe ...> ou <script ...> gerado
+            5. Substitua TODO o bloco "FALLBACK" abaixo pelo código copiado
+            ====================================================================
+          */}
+
+          {/* FALLBACK — substituir pelo embed do widget */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[gallery1, gallery2, galleryNails, gallerySkin, gallery2, gallery1, gallerySkin, galleryNails].map((src, i) => (
+              <a
+                key={i}
+                href="https://www.instagram.com/essenzastudiodibellezza"
+                target="_blank"
+                rel="noreferrer"
+                className="relative aspect-square overflow-hidden rounded-xl group block"
+              >
+                <img
+                  src={src}
+                  alt={`Post Essenza ${i + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors flex items-center justify-center">
+                  <Instagram className="w-7 h-7 text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth={1.4} />
+                </div>
+              </a>
+            ))}
+          </div>
+          {/* FIM DO FALLBACK */}
+
+          <div className="mt-8 text-center">
+            <Button asChild variant="outline"
+              className="border-2 border-accent text-primary hover:bg-accent hover:text-accent-foreground rounded-full px-8 tracking-luxury text-xs uppercase">
+              <a href="https://www.instagram.com/essenzastudiodibellezza" target="_blank" rel="noreferrer">
+                <Instagram className="w-4 h-4 mr-2" /> Seguir no Instagram
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA / Agendamento */}
       <section id="agendamento" className="container pb-24">
         <div className="bg-gradient-wood rounded-[2.5rem] p-12 lg:p-20 text-center text-primary-foreground shadow-soft relative overflow-hidden">
