@@ -379,53 +379,11 @@ const Index = () => {
         </div>
 
         <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
-          {/*
-            ====================================================================
-            COMO ATIVAR O FEED AUTOMÁTICO DO INSTAGRAM (widget gratuito):
-            ====================================================================
-            1. Crie uma conta gratuita em um destes serviços:
-               • SnapWidget   → https://snapwidget.com  (mais simples, grátis)
-               • Elfsight     → https://elfsight.com/instagram-feed-instashow
-               • EmbedSocial  → https://embedsocial.com/products/embedfeed/
-            2. Conecte a conta @essenzastudiodibellezza
-            3. Personalize o layout (recomendado: grid 4x2, sem bordas)
-            4. Copie o código <iframe ...> ou <script ...> gerado
-            5. Substitua TODO o bloco "FALLBACK" abaixo pelo código copiado
-            ====================================================================
-          */}
-
-          {/* FALLBACK — substituir pelo embed do widget */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[gallery1, gallery2, galleryNails, gallerySkin, gallery2, gallery1, gallerySkin, galleryNails].map((src, i) => (
-              <a
-                key={i}
-                href="https://www.instagram.com/essenzastudiodibellezza"
-                target="_blank"
-                rel="noreferrer"
-                className="relative aspect-square overflow-hidden rounded-xl group block"
-              >
-                <img
-                  src={src}
-                  alt={`Post Essenza ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors flex items-center justify-center">
-                  <Instagram className="w-7 h-7 text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth={1.4} />
-                </div>
-              </a>
-            ))}
-          </div>
-          {/* FIM DO FALLBACK */}
-
-          <div className="mt-8 text-center">
-            <Button asChild variant="outline"
-              className="border-2 border-accent text-primary hover:bg-accent hover:text-accent-foreground rounded-full px-8 tracking-luxury text-xs uppercase">
-              <a href="https://www.instagram.com/essenzastudiodibellezza" target="_blank" rel="noreferrer">
-                <Instagram className="w-4 h-4 mr-2" /> Seguir no Instagram
-              </a>
-            </Button>
-          </div>
+          {/* Elfsight Instagram Feed | Essenza Studio di Bellezza */}
+          <div
+            className="elfsight-app-4d9661ae-25f6-403c-8968-206273d82bc7"
+            data-elfsight-app-lazy
+          />
         </div>
       </section>
 
