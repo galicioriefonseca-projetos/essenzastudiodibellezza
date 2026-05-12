@@ -168,39 +168,9 @@ const Index = () => {
             </a>
           </div>
 
-          {/* Localização (full width) */}
-          <div id="contato" className="lg:col-span-12 bg-card rounded-[2rem] p-8 shadow-card animate-fade-in">
-            <h2 className="font-serif text-3xl text-primary text-center tracking-wide">LOCALIZAÇÃO EM FERNANDÓPOLIS</h2>
-            <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
-            <div className="grid md:grid-cols-2 gap-6 items-stretch">
-              <div className="rounded-2xl overflow-hidden min-h-[320px] shadow-card">
-                <iframe
-                  title="Mapa Essenza Studio di Bellezza - Fernandópolis"
-                  src="https://www.google.com/maps?q=Essenza+Studio+di+Bellezza+Fernandopolis&output=embed"
-                  className="w-full h-full min-h-[320px] grayscale-[20%]"
-                  loading="lazy"
-                />
-                <a
-                  href="https://www.google.com/maps/place/Essenza+%7C+Studio+di+Bellezza/@-20.2756971,-50.2446359,17z/data=!3m1!4b1!4m6!3m5!1s0x9497f70128542d11:0x35a5d58b9efd0031!8m2!3d-20.2756971!4d-50.242061!16s%2Fg%2F11wqnrlnv1"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors py-3"
-                >
-                  Ver no Google Maps →
-                </a>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden min-h-[320px]">
-                <img src={salonInterior} alt="Interior do salão Essenza" loading="lazy" width={960} height={720}
-                     className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-primary-foreground space-y-2">
-                  <div className="flex items-center gap-2 text-sm"><MapPin className="w-4 h-4 text-gold" /> Fernandópolis - SP</div>
-                  <div className="flex items-center gap-2 text-sm"><Phone className="w-4 h-4 text-gold" /> (17) 99673-3303</div>
-                  <div className="flex items-center gap-2 text-sm"><Instagram className="w-4 h-4 text-gold" /> @essenza.studio</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+      </section>
+      {/* (Localização movida para o final) */}
         </div>
       </section>
 
