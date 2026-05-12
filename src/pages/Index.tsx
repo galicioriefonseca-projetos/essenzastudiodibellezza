@@ -177,7 +177,7 @@ const Index = () => {
       <section id="servicos-completos" className="container pb-20">
         <div className="text-center mb-12">
           <p className="tracking-luxury text-xs uppercase text-accent mb-3">Catálogo Essenza</p>
-          <h2 className="font-serif text-4xl lg:text-5xl text-primary">Nossos Serviços</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary">Nossos Serviços</h2>
           <div className="mx-auto mt-4 w-16 h-px bg-accent" />
           <p className="mt-6 max-w-xl mx-auto text-muted-foreground text-sm leading-relaxed">
             Uma curadoria completa de cuidados de alto padrão, organizados por especialidade para a sua experiência exclusiva.
