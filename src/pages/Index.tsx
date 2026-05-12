@@ -7,6 +7,11 @@ import logo from "@/assets/essenza-logo.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
 
 const CATALOG_IDS = ["cabeleireiro", "manicure", "sobrancelhas", "maquiagem", "salao", "loja"];
+const WHATSAPP_PHONE = "5517996733303";
+const buildWhatsAppUrl = (message?: string) => {
+  const base = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}`;
+  return message ? `${base}&text=${encodeURIComponent(message)}` : base;
+};
 
 const Index = () => {
   const [openCategory, setOpenCategory] = useState<string>("cabeleireiro");
