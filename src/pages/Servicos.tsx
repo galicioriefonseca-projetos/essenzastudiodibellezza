@@ -172,11 +172,11 @@ const Servicos = () => {
                         className="px-0 h-auto text-xs uppercase tracking-luxury text-accent hover:bg-transparent hover:text-primary"
                       >
                         <a
-                          href={`https://wa.me/5517996733303?text=${encodeURIComponent(
+                          href={`https://api.whatsapp.com/send?phone=5517996733303&text=${encodeURIComponent(
                             `Olá! Gostaria de agendar: ${s.name}`,
                           )}`}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                         >
                           <Phone className="w-3 h-3 mr-1.5" /> Agendar
                         </a>
