@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, Phone, Instagram, Scissors, Sparkles, Hand, Quote, Eye, Brush, ShoppingBag } from "lucide-react";
@@ -6,15 +6,39 @@ import heroModel from "@/assets/hero-model.jpg";
 import logo from "@/assets/essenza-logo.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
 
+const CATALOG_IDS = ["cabeleireiro", "manicure", "sobrancelhas", "maquiagem", "salao", "loja"];
+
 const Index = () => {
+  const [openCategory, setOpenCategory] = useState<string>("cabeleireiro");
+
   useEffect(() => {
     const SRC = "https://elfsightcdn.com/platform.js";
-    if (document.querySelector(`script[src="${SRC}"]`)) return;
-    const s = document.createElement("script");
-    s.src = SRC;
-    s.async = true;
-    document.body.appendChild(s);
+    if (!document.querySelector(`script[src="${SRC}"]`)) {
+      const s = document.createElement("script");
+      s.src = SRC;
+      s.async = true;
+      document.body.appendChild(s);
+    }
+
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (CATALOG_IDS.includes(hash)) {
+        setOpenCategory(hash);
+        // wait a tick for the accordion to expand, then scroll with header offset
+        requestAnimationFrame(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 90;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        });
+      }
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
   }, []);
+
 
   return (
     <div className="min-h-screen texture-cement">
@@ -191,7 +215,7 @@ const Index = () => {
         </div>
 
         <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
-          <Accordion type="single" collapsible defaultValue="cabeleireiro" className="w-full space-y-3">
+          <Accordion type="single" collapsible value={openCategory} onValueChange={(v) => setOpenCategory(v)} className="w-full space-y-3">
             {[
               {
                 id: "cabeleireiro",
@@ -296,7 +320,8 @@ const Index = () => {
               <AccordionItem
                 key={id}
                 value={id}
-                className="border border-border/50 rounded-2xl px-5 lg:px-7 bg-background/50 data-[state=open]:bg-secondary/40 data-[state=open]:shadow-soft transition-colors"
+                id={id}
+                className="scroll-mt-24 border border-border/50 rounded-2xl px-5 lg:px-7 bg-background/50 data-[state=open]:bg-secondary/40 data-[state=open]:shadow-soft transition-colors"
               >
                 <AccordionTrigger className="hover:no-underline py-5">
                   <div className="flex items-center gap-4 text-left">
