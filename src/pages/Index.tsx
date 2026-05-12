@@ -364,7 +364,8 @@ const Index = () => {
                       </p>
                       <Button asChild size="sm" variant="outline"
                         className="border-accent/60 text-primary hover:bg-accent hover:text-accent-foreground rounded-full tracking-luxury text-[10px] uppercase">
-                        <a href="https://wa.me/5517996733303" target="_blank" rel="noreferrer">
+                        <a href={buildWhatsAppUrl(`Olá! Gostaria de agendar um horário em ${title}.`)} target="_blank" rel="noopener noreferrer">
+
                           <Phone className="w-3 h-3 mr-1.5" /> Agendar pelo WhatsApp
                         </a>
                       </Button>
