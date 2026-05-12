@@ -87,48 +87,50 @@ const Index = () => {
       <section className="container pb-20">
         <div className="grid lg:grid-cols-12 gap-6">
           {/* Especialidades */}
-          <div id="servicos" className="lg:col-span-4 bg-card rounded-[2rem] p-8 shadow-card animate-fade-in">
-            <h2 className="font-serif text-3xl text-primary text-center tracking-wide">ESPECIALIDADES</h2>
+          <div id="servicos" className="lg:col-span-4 bg-card rounded-[2rem] p-6 sm:p-8 shadow-card animate-fade-in">
+            <h2 className="font-serif text-2xl sm:text-3xl text-primary text-center tracking-wide">ESPECIALIDADES</h2>
             <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {[
-                { icon: Scissors, label: "Cabelo" },
-                { icon: Brush, label: "Maquiagem" },
-                { icon: Hand, label: "Unhas" },
-                { icon: Eye, label: "Sobrancelhas" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-secondary/60 transition-colors">
+                { icon: Scissors, label: "Cabelo", href: "#cabeleireiro" },
+                { icon: Brush, label: "Maquiagem", href: "#maquiagem" },
+                { icon: Hand, label: "Unhas", href: "#manicure" },
+                { icon: Eye, label: "Sobrancelhas", href: "#sobrancelhas" },
+              ].map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-secondary/60 hover:scale-105 transition-all"
+                >
                   <div className="w-14 h-14 rounded-full border border-accent/40 flex items-center justify-center text-accent">
                     <Icon className="w-6 h-6" strokeWidth={1.2} />
                   </div>
                   <span className="text-sm tracking-wide text-foreground">{label}</span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Galeria */}
-          <div id="galeria" className="lg:col-span-4 bg-card rounded-[2rem] p-8 shadow-card animate-fade-in">
-            <h2 className="font-serif text-3xl text-primary text-center tracking-wide">GALERIA DE ESTILO</h2>
-            <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
-            <div className="grid grid-cols-2 gap-3">
-              {[gallery1, gallery2, galleryNails, gallerySkin].map((src, i) => (
-                <div key={i} className="aspect-square overflow-hidden rounded-xl group">
-                  <img
-                    src={src}
-                    alt={`Trabalho Essenza ${i + 1}`}
-                    loading="lazy"
-                    width={640}
-                    height={640}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-              ))}
-            </div>
+          {/* Instagram (substituiu Galeria) */}
+          <div id="instagram" className="lg:col-span-4 bg-card rounded-[2rem] p-6 sm:p-8 shadow-card animate-fade-in">
+            <h2 className="font-serif text-2xl sm:text-3xl text-primary text-center tracking-wide">INSTAGRAM</h2>
+            <div className="mx-auto mt-2 mb-6 w-12 h-px bg-accent" />
+            <div
+              className="elfsight-app-4d9661ae-25f6-403c-8968-206273d82bc7 min-h-[300px]"
+              data-elfsight-app-lazy
+            />
+            <a
+              href="https://www.instagram.com/essenzastudiodibellezza"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 block text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors"
+            >
+              @essenzastudiodibellezza →
+            </a>
           </div>
 
           {/* Depoimentos */}
-          <div className="lg:col-span-4 bg-card rounded-[2rem] p-8 shadow-card animate-fade-in flex flex-col">
+          <div className="lg:col-span-4 bg-card rounded-[2rem] p-6 sm:p-8 shadow-card animate-fade-in flex flex-col">
             <h2 className="font-serif text-3xl text-primary text-center tracking-wide">AVALIAÇÕES</h2>
             <div className="mx-auto mt-2 mb-3 w-12 h-px bg-accent" />
             <div className="flex items-center justify-center gap-2 mb-6 text-xs tracking-wide text-muted-foreground">
