@@ -171,8 +171,6 @@ const Index = () => {
         </div>
       </section>
       {/* (Localização movida para o final) */}
-        </div>
-      </section>
 
       {/* Catálogo de Serviços por Categoria */}
       <section id="servicos-completos" className="container pb-20">
