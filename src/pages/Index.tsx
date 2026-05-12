@@ -20,29 +20,34 @@ const Index = () => {
     <div className="min-h-screen texture-cement">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/40">
-        <div className="container flex items-center justify-between py-5">
-          <a href="#" className="flex items-center gap-3 leading-none">
-            <img src={logo} alt="Essenza Studio di Bellezza logo" width={48} height={48} className="w-11 h-11 rounded-full object-cover bg-primary" />
-            <span className="flex flex-col">
-              <span className="font-serif text-3xl tracking-luxury text-primary">ESSENZA</span>
-              <span className="font-serif italic text-xs text-muted-foreground tracking-wide ml-1">Studio di Bellezza</span>
+        <div className="container flex items-center justify-between py-4 sm:py-5 gap-3">
+          <a href="#" className="flex items-center gap-2 sm:gap-3 leading-none min-w-0">
+            <img src={logo} alt="Essenza Studio di Bellezza logo" width={48} height={48} className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover bg-primary shrink-0" />
+            <span className="flex flex-col min-w-0">
+              <span className="font-serif text-xl sm:text-3xl tracking-luxury text-primary truncate">ESSENZA</span>
+              <span className="font-serif italic text-[10px] sm:text-xs text-muted-foreground tracking-wide ml-1 truncate">Studio di Bellezza</span>
             </span>
           </a>
-          <nav className="hidden md:flex items-center gap-10 text-xs uppercase tracking-luxury text-muted-foreground">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-xs uppercase tracking-luxury text-muted-foreground">
             <a href="#home" className="text-accent hover:text-accent transition-colors border-b border-accent pb-1">Home</a>
             <a href="/servicos" className="hover:text-foreground transition-colors">Serviços</a>
-            <a href="#galeria" className="hover:text-foreground transition-colors">Galeria</a>
             <a href="#instagram" className="hover:text-foreground transition-colors">Instagram</a>
             <a href="#agendamento" className="hover:text-foreground transition-colors">Agendamento</a>
             <a href="#contato" className="hover:text-foreground transition-colors">Contato</a>
           </nav>
+          <a
+            href="#agendamento"
+            className="md:hidden text-[10px] uppercase tracking-luxury px-3 py-2 rounded-full border border-accent text-primary shrink-0"
+          >
+            Agendar
+          </a>
         </div>
       </header>
 
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
-        <div className="container py-12 lg:py-20">
-          <div className="relative grid lg:grid-cols-2 gap-10 items-center bg-gradient-warm rounded-[2.5rem] p-8 lg:p-14 shadow-soft overflow-hidden">
+        <div className="container py-8 sm:py-12 lg:py-20">
+          <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-10 items-center bg-gradient-warm rounded-[1.5rem] sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-14 shadow-soft overflow-hidden">
             {/* Glow */}
             <div className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-glow animate-glow-pulse pointer-events-none"
                  style={{ background: 'var(--gradient-glow)' }} />
@@ -50,7 +55,7 @@ const Index = () => {
             <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-[24px] border-wood/70 hidden lg:block" />
 
             <div className="relative">
-              <div className="rounded-[2rem] overflow-hidden shadow-soft">
+              <div className="rounded-[1.25rem] sm:rounded-[2rem] overflow-hidden shadow-soft">
                 <img
                   src={heroModel}
                   alt="Modelo com cabelo perfeito no salão Essenza"
@@ -62,15 +67,15 @@ const Index = () => {
             </div>
 
             <div className="relative animate-fade-in-up">
-              <h1 className="font-serif text-5xl lg:text-7xl leading-[1.05] text-primary">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-primary">
                 Harmonia,<br />Beleza<br /><em className="text-accent">e Bem-Estar</em>
               </h1>
-              <p className="mt-6 max-w-md text-muted-foreground leading-relaxed">
+              <p className="mt-5 sm:mt-6 max-w-md text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Venha viver a experiência Essenza em Fernandópolis. Cabelo, maquiagem, unhas, sobrancelhas e cuidados exclusivos em um ambiente acolhedor e moderno.
               </p>
-              <div className="mt-10">
+              <div className="mt-8 sm:mt-10">
                 <Button asChild variant="outline" size="lg"
-                  className="border-2 border-accent text-primary hover:bg-accent hover:text-accent-foreground rounded-full px-10 py-6 tracking-luxury text-xs uppercase">
+                  className="border-2 border-accent text-primary hover:bg-accent hover:text-accent-foreground rounded-full px-8 sm:px-10 py-5 sm:py-6 tracking-luxury text-xs uppercase">
                   <a href="#agendamento">Agende seu Horário</a>
                 </Button>
               </div>
