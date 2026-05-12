@@ -7,6 +7,11 @@ import logo from "@/assets/essenza-logo.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
 
 const CATALOG_IDS = ["cabeleireiro", "manicure", "sobrancelhas", "maquiagem", "salao", "loja"];
+const WHATSAPP_PHONE = "5517996733303";
+const buildWhatsAppUrl = (message?: string) => {
+  const base = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}`;
+  return message ? `${base}&text=${encodeURIComponent(message)}` : base;
+};
 
 const Index = () => {
   const [openCategory, setOpenCategory] = useState<string>("cabeleireiro");
@@ -114,7 +119,10 @@ const Index = () => {
           {/* Especialidades */}
           <div id="servicos" className="lg:col-span-4 bg-card rounded-[2rem] p-6 sm:p-8 shadow-card animate-fade-in">
             <h2 className="font-serif text-2xl sm:text-3xl text-primary text-center tracking-wide">ESPECIALIDADES</h2>
-            <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
+            <div className="mx-auto mt-2 mb-4 w-12 h-px bg-accent" />
+            <p className="text-center text-xs sm:text-sm text-muted-foreground mb-6 leading-relaxed">
+              Toque em uma especialidade para ver o <a href="#servicos-completos" className="text-accent underline-offset-4 hover:underline">catálogo completo</a>.
+            </p>
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {[
                 { icon: Scissors, label: "Cabelo", href: "#cabeleireiro" },
@@ -134,6 +142,12 @@ const Index = () => {
                 </a>
               ))}
             </div>
+            <a
+              href="#servicos-completos"
+              className="mt-6 block text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors"
+            >
+              Ver catálogo completo →
+            </a>
           </div>
 
           {/* Instagram (substituiu Galeria) */}
@@ -350,7 +364,8 @@ const Index = () => {
                       </p>
                       <Button asChild size="sm" variant="outline"
                         className="border-accent/60 text-primary hover:bg-accent hover:text-accent-foreground rounded-full tracking-luxury text-[10px] uppercase">
-                        <a href="https://wa.me/5517996733303" target="_blank" rel="noreferrer">
+                        <a href={buildWhatsAppUrl(`Olá! Gostaria de agendar um horário em ${title}.`)} target="_blank" rel="noopener noreferrer">
+
                           <Phone className="w-3 h-3 mr-1.5" /> Agendar pelo WhatsApp
                         </a>
                       </Button>
@@ -373,7 +388,7 @@ const Index = () => {
             <p className="mt-4 max-w-xl mx-auto opacity-90 text-sm sm:text-base">Atendimento personalizado com hora marcada. Fale agora pelo WhatsApp e garanta seu horário.</p>
             <Button asChild size="lg"
               className="mt-10 bg-background text-primary hover:bg-background/90 rounded-full px-8 sm:px-10 py-6 tracking-luxury text-xs uppercase">
-              <a href="https://wa.me/5517996733303" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
+              <a href={buildWhatsAppUrl("Olá! Gostaria de agendar um horário no Essenza.")} target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a>
             </Button>
           </div>
         </div>
