@@ -1,13 +1,9 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Phone, Instagram, Scissors, Sparkles, Hand, Flower2, Quote, Palette, Eye, Brush, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, Instagram, Scissors, Hand, Quote, Eye, Brush } from "lucide-react";
 import heroModel from "@/assets/hero-model.jpg";
 import logo from "@/assets/essenza-logo.jpg";
-import gallery1 from "@/assets/gallery-hair-1.jpg";
-import gallery2 from "@/assets/gallery-hair-2.jpg";
-import galleryNails from "@/assets/gallery-nails.jpg";
-import gallerySkin from "@/assets/gallery-skincare.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
 
 const Index = () => {
