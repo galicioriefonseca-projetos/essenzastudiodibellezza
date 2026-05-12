@@ -337,38 +337,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Instagram Feed */}
-      <section id="instagram" className="container pb-20">
-        <div className="text-center mb-10">
-          <p className="tracking-luxury text-xs uppercase text-accent mb-3">Siga-nos</p>
-          <h2 className="font-serif text-4xl lg:text-5xl text-primary">@essenzastudiodibellezza</h2>
-          <div className="mx-auto mt-4 w-16 h-px bg-accent" />
-          <p className="mt-6 max-w-xl mx-auto text-muted-foreground text-sm leading-relaxed">
-            Acompanhe nossos trabalhos mais recentes, bastidores e novidades direto do nosso Instagram.
-          </p>
-        </div>
-
-        <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
-          {/* Elfsight Instagram Feed | Essenza Studio di Bellezza */}
-          <div
-            className="elfsight-app-4d9661ae-25f6-403c-8968-206273d82bc7"
-            data-elfsight-app-lazy
-          />
-        </div>
-      </section>
-
       {/* CTA / Agendamento */}
-      <section id="agendamento" className="container pb-24">
-        <div className="bg-gradient-wood rounded-[2.5rem] p-12 lg:p-20 text-center text-primary-foreground shadow-soft relative overflow-hidden">
+      <section id="agendamento" className="container pb-20">
+        <div className="bg-gradient-wood rounded-[2.5rem] p-8 sm:p-12 lg:p-20 text-center text-primary-foreground shadow-soft relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-glow opacity-40 animate-glow-pulse" />
           <div className="relative">
             <p className="tracking-luxury text-xs uppercase text-gold mb-4">Sua experiência começa aqui</p>
-            <h2 className="font-serif text-4xl lg:text-6xl">Reserve seu momento Essenza</h2>
-            <p className="mt-4 max-w-xl mx-auto opacity-90">Atendimento personalizado com hora marcada. Fale agora pelo WhatsApp e garanta seu horário.</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl">Reserve seu momento Essenza</h2>
+            <p className="mt-4 max-w-xl mx-auto opacity-90 text-sm sm:text-base">Atendimento personalizado com hora marcada. Fale agora pelo WhatsApp e garanta seu horário.</p>
             <Button asChild size="lg"
-              className="mt-10 bg-background text-primary hover:bg-background/90 rounded-full px-10 py-6 tracking-luxury text-xs uppercase">
+              className="mt-10 bg-background text-primary hover:bg-background/90 rounded-full px-8 sm:px-10 py-6 tracking-luxury text-xs uppercase">
               <a href="https://wa.me/5517996733303" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Localização (final da página) */}
+      <section id="contato" className="container pb-24">
+        <div className="bg-card rounded-[2rem] p-6 sm:p-8 shadow-card animate-fade-in">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-primary text-center tracking-wide">LOCALIZAÇÃO EM FERNANDÓPOLIS</h2>
+          <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
+          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+            <div className="rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[320px] shadow-card flex flex-col">
+              <iframe
+                title="Mapa Essenza Studio di Bellezza - Fernandópolis"
+                src="https://www.google.com/maps?q=Essenza+Studio+di+Bellezza+Fernandopolis&output=embed"
+                className="w-full flex-1 min-h-[280px] grayscale-[20%]"
+                loading="lazy"
+              />
+              <a
+                href="https://www.google.com/maps/place/Essenza+%7C+Studio+di+Bellezza/@-20.2756971,-50.2446359,17z/data=!3m1!4b1!4m6!3m5!1s0x9497f70128542d11:0x35a5d58b9efd0031!8m2!3d-20.2756971!4d-50.242061!16s%2Fg%2F11wqnrlnv1"
+                target="_blank"
+                rel="noreferrer"
+                className="block text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors py-3"
+              >
+                Ver no Google Maps →
+              </a>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[320px]">
+              <img src={salonInterior} alt="Interior do salão Essenza" loading="lazy" width={960} height={720}
+                   className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-primary-foreground space-y-2">
+                <div className="flex items-center gap-2 text-sm"><MapPin className="w-4 h-4 text-gold" /> Fernandópolis - SP</div>
+                <div className="flex items-center gap-2 text-sm"><Phone className="w-4 h-4 text-gold" /> (17) 99673-3303</div>
+                <div className="flex items-center gap-2 text-sm"><Instagram className="w-4 h-4 text-gold" /> @essenzastudiodibellezza</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
