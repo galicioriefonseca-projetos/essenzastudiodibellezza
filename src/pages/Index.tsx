@@ -320,7 +320,8 @@ const Index = () => {
               <AccordionItem
                 key={id}
                 value={id}
-                className="border border-border/50 rounded-2xl px-5 lg:px-7 bg-background/50 data-[state=open]:bg-secondary/40 data-[state=open]:shadow-soft transition-colors"
+                id={id}
+                className="scroll-mt-24 border border-border/50 rounded-2xl px-5 lg:px-7 bg-background/50 data-[state=open]:bg-secondary/40 data-[state=open]:shadow-soft transition-colors"
               >
                 <AccordionTrigger className="hover:no-underline py-5">
                   <div className="flex items-center gap-4 text-left">
