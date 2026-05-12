@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Phone, Instagram, Scissors, Hand, Quote, Eye, Brush } from "lucide-react";
+import { MapPin, Phone, Instagram, Scissors, Sparkles, Hand, Quote, Eye, Brush, ShoppingBag } from "lucide-react";
 import heroModel from "@/assets/hero-model.jpg";
 import logo from "@/assets/essenza-logo.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
