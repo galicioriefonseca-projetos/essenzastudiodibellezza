@@ -119,7 +119,10 @@ const Index = () => {
           {/* Especialidades */}
           <div id="servicos" className="lg:col-span-4 bg-card rounded-[2rem] p-6 sm:p-8 shadow-card animate-fade-in">
             <h2 className="font-serif text-2xl sm:text-3xl text-primary text-center tracking-wide">ESPECIALIDADES</h2>
-            <div className="mx-auto mt-2 mb-8 w-12 h-px bg-accent" />
+            <div className="mx-auto mt-2 mb-4 w-12 h-px bg-accent" />
+            <p className="text-center text-xs sm:text-sm text-muted-foreground mb-6 leading-relaxed">
+              Toque em uma especialidade para ver o <a href="#servicos-completos" className="text-accent underline-offset-4 hover:underline">catálogo completo</a>.
+            </p>
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {[
                 { icon: Scissors, label: "Cabelo", href: "#cabeleireiro" },
@@ -139,6 +142,12 @@ const Index = () => {
                 </a>
               ))}
             </div>
+            <a
+              href="#servicos-completos"
+              className="mt-6 block text-center text-xs tracking-luxury uppercase text-accent hover:text-primary transition-colors"
+            >
+              Ver catálogo completo →
+            </a>
           </div>
 
           {/* Instagram (substituiu Galeria) */}
