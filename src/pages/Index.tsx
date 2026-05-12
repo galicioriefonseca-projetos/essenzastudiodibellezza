@@ -215,7 +215,7 @@ const Index = () => {
         </div>
 
         <div className="bg-card rounded-[2rem] p-6 lg:p-10 shadow-card">
-          <Accordion type="single" collapsible defaultValue="cabeleireiro" className="w-full space-y-3">
+          <Accordion type="single" collapsible value={openCategory} onValueChange={(v) => setOpenCategory(v)} className="w-full space-y-3">
             {[
               {
                 id: "cabeleireiro",
