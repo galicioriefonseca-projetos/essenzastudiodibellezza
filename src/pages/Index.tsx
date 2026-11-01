@@ -413,8 +413,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Perguntas Frequentes */}
+      <section id="faq" className="container pb-20 scroll-mt-24">
+        <div className="text-center mb-10">
+          <p className="tracking-luxury text-xs uppercase text-accent mb-3">Dúvidas Essenza</p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary">Perguntas Frequentes</h2>
+          <div className="mx-auto mt-4 w-16 h-px bg-accent" />
+          <p className="mt-6 max-w-xl mx-auto text-muted-foreground text-sm leading-relaxed">
+            O essencial sobre mechas, balayage, manutenção e agendamento no Essenza Studio di Bellezza.
+          </p>
+        </div>
+
+        <div className="bg-card rounded-[2rem] p-4 sm:p-8 lg:p-10 shadow-card">
+          <Accordion type="single" collapsible defaultValue="faq-1" className="w-full space-y-3">
+            {FAQ_ITEMS.map((faq, i) => (
+              <AccordionItem
+                key={faq.question}
+                value={`faq-${i + 1}`}
+                className="border border-border/50 rounded-2xl px-4 sm:px-6 bg-background/50 data-[state=open]:bg-secondary/40 data-[state=open]:shadow-soft transition-colors"
+              >
+                <AccordionTrigger className="hover:no-underline py-5 text-left items-start gap-3 sm:gap-4">
+                  <span className="font-serif text-base sm:text-xl lg:text-2xl text-primary tracking-wide leading-snug pr-1">
+                    {faq.question}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-xs text-muted-foreground tracking-wide">
+              Ainda com dúvidas? Fale diretamente com a nossa equipe.
+            </p>
+            <Button asChild size="sm" variant="outline"
+              className="border-accent/60 text-primary hover:bg-accent hover:text-accent-foreground rounded-full tracking-luxury text-[10px] uppercase">
+              <a
+                href={buildWhatsAppUrl("Olá! Tenho uma dúvida sobre os serviços do Essenza.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Phone className="w-3 h-3 mr-1.5" /> {WHATSAPP_DISPLAY}
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA / Agendamento */}
       <section id="agendamento" className="container pb-20">
+
         <div className="bg-gradient-wood rounded-[2.5rem] p-8 sm:p-12 lg:p-20 text-center text-primary-foreground shadow-soft relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-glow opacity-40 animate-glow-pulse" />
           <div className="relative">
@@ -456,9 +508,27 @@ const Index = () => {
                    className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-primary-foreground space-y-2">
-                <div className="flex items-center gap-2 text-sm"><MapPin className="w-4 h-4 text-gold" /> Fernandópolis - SP</div>
-                <div className="flex items-center gap-2 text-sm"><Phone className="w-4 h-4 text-gold" /> (17) 99673-3303</div>
-                <div className="flex items-center gap-2 text-sm"><Instagram className="w-4 h-4 text-gold" /> @essenzastudiodibellezza</div>
+                <div className="flex items-start gap-2 text-xs sm:text-sm leading-relaxed">
+                  <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                  <span>{ADDRESS_DISPLAY}</span>
+                </div>
+                <a
+                  href={buildWhatsAppUrl("Olá! Gostaria de agendar um horário no Essenza.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm hover:text-gold transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-gold shrink-0" /> {WHATSAPP_DISPLAY}
+                </a>
+                <a
+                  href="https://www.instagram.com/essenzastudiodibellezza"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-sm hover:text-gold transition-colors"
+                >
+                  <Instagram className="w-4 h-4 text-gold shrink-0" /> @essenzastudiodibellezza
+                </a>
+
               </div>
             </div>
           </div>
