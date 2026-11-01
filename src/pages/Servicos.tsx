@@ -4,6 +4,8 @@ import { Search, Phone, ArrowLeft, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { categories, services, type ServiceCategoryId } from "@/data/services";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
+
 
 type Filter = "todos" | ServiceCategoryId;
 
@@ -172,12 +174,11 @@ const Servicos = () => {
                         className="px-0 h-auto text-xs uppercase tracking-luxury text-accent hover:bg-transparent hover:text-primary"
                       >
                         <a
-                          href={`https://api.whatsapp.com/send?phone=5517996733303&text=${encodeURIComponent(
-                            `Olá! Gostaria de agendar: ${s.name}`,
-                          )}`}
+                          href={buildWhatsAppUrl(`Olá! Gostaria de agendar: ${s.name}`)}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
+
                           <Phone className="w-3 h-3 mr-1.5" /> Agendar
                         </a>
                       </Button>
@@ -207,7 +208,7 @@ const Servicos = () => {
               size="lg"
               className="mt-10 bg-background text-primary hover:bg-background/90 rounded-full px-10 py-6 tracking-luxury text-xs uppercase"
             >
-              <a href="https://api.whatsapp.com/send?phone=5517996733303&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
+              <a href={buildWhatsAppUrl("Olá! Gostaria de mais informações.")} target="_blank" rel="noopener noreferrer">
                 Falar pelo WhatsApp
               </a>
             </Button>
