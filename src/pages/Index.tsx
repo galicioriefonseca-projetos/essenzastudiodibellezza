@@ -5,13 +5,37 @@ import { MapPin, Phone, Instagram, Scissors, Sparkles, Hand, Quote, Eye, Brush, 
 import heroModel from "@/assets/hero-model.jpg";
 import logo from "@/assets/essenza-logo.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
+import {
+  ADDRESS_DISPLAY,
+  WHATSAPP_DISPLAY,
+  buildWhatsAppUrl,
+} from "@/lib/whatsapp";
 
 const CATALOG_IDS = ["cabeleireiro", "manicure", "sobrancelhas", "maquiagem", "salao", "loja"];
-const WHATSAPP_PHONE = "5517996733303";
-const buildWhatsAppUrl = (message?: string) => {
-  const base = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}`;
-  return message ? `${base}&text=${encodeURIComponent(message)}` : base;
-};
+
+const FAQ_ITEMS = [
+  {
+    question: "Fazer mechas ou loiro estraga o cabelo?",
+    answer:
+      "No Essenza Studio di Bellezza, não. O nosso maior compromisso é a integridade da fibra capilar. Utilizamos tecnologias avançadas de clareamento, testes de elasticidade prévios e protocolos de proteção e reconstrução profunda durante todo o processo. Dessa forma, garantimos um loiro luminoso, saudável e com toque macio, sem o risco de corte químico.",
+  },
+  {
+    question: "Qual é a diferença entre Balayage e mechas tradicionais?",
+    answer:
+      "A Balayage é uma técnica de clareamento à mão livre que cria um efeito de iluminação mais natural, suave e com raiz esfumada, exigindo menos manutenção no dia a dia. Já as mechas tradicionais podem proporcionar um loiro mais intenso e marcado. Na sua avaliação personalizada no salão, nossa equipe analisa o seu tom de pele e estilo de vida para indicar a técnica ideal.",
+  },
+  {
+    question: "Quanto tempo dura a manutenção das mechas?",
+    answer:
+      "O intervalo de manutenção varia conforme a técnica escolhida e o crescimento do seu cabelo. Em média, técnicas como balayage e morena iluminada pedem retoques entre 4 a 6 meses, enquanto loiros globais podem necessitar de manutenção na raiz a cada 2 a 3 meses. Oferecemos um cronograma de cuidados pós-salão para prolongar a cor e o brilho em casa.",
+  },
+  {
+    question: "Como agendar uma avaliação capilar na Essenza?",
+    answer:
+      "O agendamento de avaliações e horários é feito de forma totalmente personalizada e prática através do nosso WhatsApp oficial: (17) 99673-3303. Nosso estúdio está localizado na Rua Rafael de Oliveira, 645 - Box 5, Jardim Santa Helena, em Fernandópolis/SP.",
+  },
+];
+
 
 const Index = () => {
   const [openCategory, setOpenCategory] = useState<string>("cabeleireiro");
@@ -61,15 +85,19 @@ const Index = () => {
             <a href="#home" className="text-accent hover:text-accent transition-colors border-b border-accent pb-1">Home</a>
             <a href="/servicos" className="hover:text-foreground transition-colors">Serviços</a>
             <a href="#instagram" className="hover:text-foreground transition-colors">Instagram</a>
+            <a href="#faq" className="hover:text-foreground transition-colors">Dúvidas</a>
             <a href="#agendamento" className="hover:text-foreground transition-colors">Agendamento</a>
             <a href="#contato" className="hover:text-foreground transition-colors">Contato</a>
           </nav>
           <a
-            href="#agendamento"
+            href={buildWhatsAppUrl("Olá! Gostaria de agendar um horário no Essenza.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="md:hidden text-[10px] uppercase tracking-luxury px-3 py-2 rounded-full border border-accent text-primary shrink-0"
           >
             Agendar
           </a>
+
         </div>
       </header>
 
@@ -105,9 +133,16 @@ const Index = () => {
               <div className="mt-8 sm:mt-10">
                 <Button asChild variant="outline" size="lg"
                   className="border-2 border-accent text-primary hover:bg-accent hover:text-accent-foreground rounded-full px-8 sm:px-10 py-5 sm:py-6 tracking-luxury text-xs uppercase">
-                  <a href="#agendamento">Agende seu Horário</a>
+                  <a
+                    href={buildWhatsAppUrl("Olá! Gostaria de agendar um horário no Essenza.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Agende seu Horário
+                  </a>
                 </Button>
               </div>
+
             </div>
           </div>
         </div>
