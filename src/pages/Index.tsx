@@ -49,20 +49,26 @@ const Index = () => {
       document.body.appendChild(s);
     }
 
+    const SECTION_IDS = ["home", "servicos-completos", "instagram", "faq", "agendamento", "contato"];
+
+    const scrollToSection = (id: string) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top, behavior: "smooth" });
+    };
+
     const syncFromHash = () => {
       const hash = window.location.hash.replace("#", "");
       if (CATALOG_IDS.includes(hash)) {
         setOpenCategory(hash);
         // wait a tick for the accordion to expand, then scroll with header offset
-        requestAnimationFrame(() => {
-          const el = document.getElementById(hash);
-          if (el) {
-            const top = el.getBoundingClientRect().top + window.scrollY - 90;
-            window.scrollTo({ top, behavior: "smooth" });
-          }
-        });
+        requestAnimationFrame(() => scrollToSection(hash));
+      } else if (SECTION_IDS.includes(hash)) {
+        requestAnimationFrame(() => scrollToSection(hash));
       }
     };
+
     syncFromHash();
     window.addEventListener("hashchange", syncFromHash);
     return () => window.removeEventListener("hashchange", syncFromHash);
