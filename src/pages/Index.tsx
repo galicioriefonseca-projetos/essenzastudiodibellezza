@@ -121,7 +121,7 @@ const Index = () => {
               <div className="rounded-[1.25rem] sm:rounded-[2rem] overflow-hidden shadow-soft">
                 <img
                   src={heroModel}
-                  alt="Modelo com cabelo perfeito no salão Essenza"
+                  alt="Mulher de cabelo castanho segurando uma xícara de café no salão Essenza"
                   width={1024}
                   height={1024}
                   className="w-full h-auto object-cover"
@@ -131,7 +131,7 @@ const Index = () => {
 
             <div className="relative animate-fade-in-up">
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-primary">
-                Harmonia,<br />Beleza<br /><em className="text-accent">e Bem-Estar</em>
+                <span className="sr-only">Essenza Studio di Bellezza: salão de beleza em Fernandópolis — </span>Harmonia,<br />Beleza<br /><em className="text-accent">e Bem-Estar</em>
               </h1>
               <p className="mt-5 sm:mt-6 max-w-md text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Venha viver a experiência Essenza em Fernandópolis. Cabelo, maquiagem, unhas, sobrancelhas e cuidados exclusivos em um ambiente acolhedor e moderno.
@@ -544,7 +544,7 @@ const Index = () => {
       <footer className="border-t border-border/50 py-10">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground tracking-wide">
           <span className="flex items-center gap-2 font-serif text-base text-primary tracking-luxury">
-            <img src={logo} alt="Essenza logo" width={28} height={28} className="w-7 h-7 rounded-full object-cover bg-primary" />
+            <img src={logo} alt="" width={28} height={28} className="w-7 h-7 rounded-full object-cover bg-primary" />
             ESSENZA · Studio di Bellezza
           </span>
           <span>© {new Date().getFullYear()} Fernandópolis - SP. Todos os direitos reservados.</span>
