@@ -67,7 +67,7 @@ export default {
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Karla', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
