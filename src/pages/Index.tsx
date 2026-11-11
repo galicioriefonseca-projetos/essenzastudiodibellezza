@@ -159,7 +159,7 @@ const Index = () => {
             </a>
           </div>
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <img src={ownerSalon.url} alt="Proprietária do Essenza diante dos espelhos em arco iluminados do salão" width={1440} height={1920} className="w-full aspect-[4/5] object-cover object-top" />
+            <img src={ownerStudio.url} alt="Proprietária do Essenza de blazer marrom em ensaio de estúdio" width={720} height={961} className="w-full aspect-[4/5] object-cover object-top" />
             <div className="hidden sm:block absolute -bottom-6 -left-6 bg-background px-6 py-4 border border-border">
               <p className="font-serif text-2xl text-primary">Loiro sem corte químico</p>
               <p className="text-xs uppercase tracking-luxury text-muted-foreground mt-1">Protocolo de proteção da fibra</p>
@@ -205,7 +205,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-7 grid grid-cols-5 gap-4">
               <img src={ownerPortrait.url} alt="Retrato da proprietária do Essenza com cabelo acobreado ondulado" loading="lazy" className="col-span-3 w-full aspect-[3/4] object-cover" />
-              <img src={ownerStudio.url} alt="Proprietária do Essenza de blazer marrom em ensaio de estúdio" loading="lazy" className="col-span-2 w-full aspect-[3/4] object-cover self-end" />
+              <img src={ownerSalon.url} alt="Proprietária do Essenza diante dos espelhos em arco iluminados do salão" loading="lazy" className="col-span-2 w-full aspect-[3/4] object-cover object-top self-end" />
             </div>
             <div className="lg:col-span-5">
               <Eyebrow>Quem cuida de você</Eyebrow>
