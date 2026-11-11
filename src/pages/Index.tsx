@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import { Menu, X, ArrowRight, MapPin, Phone, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import heroModel from "@/assets/hero-model.jpg";
+import ownerSalon from "@/assets/media/owner_salon_mirrors.jpg.asset.json";
+import ownerPortrait from "@/assets/media/owner_portrait.jpg.asset.json";
+import ownerSmiling from "@/assets/media/owner_smiling.jpg.asset.json";
+import ownerStudio from "@/assets/media/owner_studio.png.asset.json";
+import clip1 from "@/assets/media/salon_clip_1.mp4.asset.json";
+import clip2 from "@/assets/media/salon_clip_2.mp4.asset.json";
 import logo from "@/assets/essenza-logo.jpg";
 import salonInterior from "@/assets/salon-interior.jpg";
 import hair1 from "@/assets/gallery-hair-1.jpg";
 import hair2 from "@/assets/gallery-hair-2.jpg";
-import nails from "@/assets/gallery-nails.jpg";
 import { ADDRESS_DISPLAY, WHATSAPP_DISPLAY, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const MAPS_URL =
@@ -17,7 +21,9 @@ const INSTAGRAM_URL = "https://www.instagram.com/essenzastudiodibellezza";
 
 const NAV = [
   { href: "#loiros", label: "Loiros" },
+  { href: "#sobre", label: "Sobre" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#videos", label: "Vídeos" },
   { href: "#noivas", label: "Noivas" },
   { href: "#avaliacoes", label: "Avaliações" },
   { href: "#faq", label: "Dúvidas" },
@@ -153,7 +159,7 @@ const Index = () => {
             </a>
           </div>
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <img src={heroModel} alt="Cliente de cabelo castanho iluminado segurando uma xícara de café no salão Essenza" width={1280} height={1280} className="w-full aspect-[4/5] object-cover" />
+            <img src={ownerSalon.url} alt="Proprietária do Essenza diante dos espelhos em arco iluminados do salão" width={1440} height={1920} className="w-full aspect-[4/5] object-cover object-top" />
             <div className="hidden sm:block absolute -bottom-6 -left-6 bg-background px-6 py-4 border border-border">
               <p className="font-serif text-2xl text-primary">Loiro sem corte químico</p>
               <p className="text-xs uppercase tracking-luxury text-muted-foreground mt-1">Protocolo de proteção da fibra</p>
@@ -189,6 +195,27 @@ const Index = () => {
               </ul>
               <div className="mt-10">
                 <WhatsButton variant="light" message="Olá! Quero fazer uma avaliação para loiro/mechas na Essenza." label="Quero meu loiro" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sobre a proprietária */}
+        <section id="sobre" className="container py-20 lg:py-28 scroll-mt-20">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-7 grid grid-cols-5 gap-4">
+              <img src={ownerPortrait.url} alt="Retrato da proprietária do Essenza com cabelo acobreado ondulado" loading="lazy" className="col-span-3 w-full aspect-[3/4] object-cover" />
+              <img src={ownerStudio.url} alt="Proprietária do Essenza de blazer marrom em ensaio de estúdio" loading="lazy" className="col-span-2 w-full aspect-[3/4] object-cover self-end" />
+            </div>
+            <div className="lg:col-span-5">
+              <Eyebrow>Quem cuida de você</Eyebrow>
+              <h2 className="font-serif text-4xl sm:text-5xl text-primary leading-tight">Um salão com a <em className="text-accent">essência</em> de quem o criou</h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                O Essenza nasceu do olhar da sua proprietária para a beleza que valoriza quem você já é.
+                Cada detalhe do espaço, dos espelhos em arco à luz quente, foi pensado para você chegar, desacelerar e sair se sentindo única.
+              </p>
+              <div className="mt-8">
+                <WhatsButton message="Olá! Gostaria de agendar um horário na Essenza." label="Agendar meu horário" />
               </div>
             </div>
           </div>
@@ -233,7 +260,22 @@ const Index = () => {
                 <WhatsButton message="Olá! Gostaria de informações sobre o atendimento para noivas/madrinhas." label="Planejar meu dia" />
               </div>
             </div>
-            <img src={nails} alt="Esmaltes em tons neutros sobre pedra clara" loading="lazy" className="w-full aspect-[4/3] object-cover" />
+            <img src={ownerSmiling.url} alt="Proprietária do Essenza sorrindo, com cabelo ondulado e maquiagem iluminada" loading="lazy" className="w-full aspect-[4/5] object-cover object-top" />
+          </div>
+        </section>
+
+        {/* Vídeos */}
+        <section id="videos" className="bg-primary text-primary-foreground scroll-mt-20">
+          <div className="container py-20 lg:py-28">
+            <div className="max-w-2xl">
+              <p className="text-xs uppercase tracking-luxury text-secondary mb-4">Por dentro do Essenza</p>
+              <h2 className="font-serif text-4xl sm:text-5xl leading-tight">Veja o salão em movimento</h2>
+            </div>
+            <div className="mt-12 grid sm:grid-cols-2 gap-6 max-w-4xl">
+              {[clip1, clip2].map((c, i) => (
+                <video key={c.url} src={c.url} controls muted loop playsInline autoPlay preload="metadata" aria-label={`Vídeo do salão Essenza ${i + 1}`} className="w-full aspect-[9/16] object-cover bg-foreground" />
+              ))}
+            </div>
           </div>
         </section>
 
