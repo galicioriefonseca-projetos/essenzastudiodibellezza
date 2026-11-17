@@ -14,13 +14,94 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_job_state: {
+        Row: {
+          last_attempt_day: string | null
+          last_success_day: string | null
+          lease_token: string | null
+          lease_until: string | null
+          name: string
+          pause_reason: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          last_attempt_day?: string | null
+          last_success_day?: string | null
+          lease_token?: string | null
+          lease_until?: string | null
+          name: string
+          pause_reason?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          last_attempt_day?: string | null
+          last_success_day?: string | null
+          lease_token?: string | null
+          lease_until?: string | null
+          name?: string
+          pause_reason?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blog_posts: {
+        Row: {
+          category: string
+          excerpt: string
+          generated: boolean
+          id: string
+          image_key: string
+          publication_day: string
+          published_at: string
+          sections: Json
+          slug: string
+          sources: Json
+          title: string
+        }
+        Insert: {
+          category: string
+          excerpt: string
+          generated?: boolean
+          id?: string
+          image_key?: string
+          publication_day: string
+          published_at?: string
+          sections?: Json
+          slug: string
+          sources?: Json
+          title: string
+        }
+        Update: {
+          category?: string
+          excerpt?: string
+          generated?: boolean
+          id?: string
+          image_key?: string
+          publication_day?: string
+          published_at?: string
+          sections?: Json
+          slug?: string
+          sources?: Json
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      acquire_blog_lease: {
+        Args: { p_day: string; p_token: string }
+        Returns: boolean
+      }
+      finish_blog_post: {
+        Args: { p_day: string; p_post: Json; p_token: string }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
