@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, ArrowRight, MapPin, Phone, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TeamSection } from "@/components/TeamSection";
+import { BlogPreview } from "@/components/BlogPreview";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ownerSalon from "@/assets/media/owner_salon_mirrors.jpg.asset.json";
 import ownerPortrait from "@/assets/media/owner_portrait.jpg.asset.json";
@@ -29,6 +30,7 @@ const NAV = [
   { href: "#noivas", label: "Noivas" },
   { href: "#avaliacoes", label: "Avaliações" },
   { href: "#faq", label: "Dúvidas" },
+  { href: "#blog", label: "Blog" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -161,7 +163,8 @@ const Index = () => {
             </a>
           </div>
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <img src={ownerStudio.url} alt="Proprietária do Essenza de blazer marrom em ensaio de estúdio" width={720} height={961} className="w-full aspect-[4/5] object-cover object-top" />
+            <img src={ownerStudio.url} alt="Laís Malacarne, proprietária do Essenza Studio di Bellezza em Fernandópolis" width={720} height={961} className="w-full aspect-[4/5] object-cover object-top" />
+            <p className="mt-3 text-sm text-muted-foreground">Laís Malacarne · Proprietária do Essenza</p>
             <div className="hidden sm:block absolute -bottom-6 -left-6 bg-background px-6 py-4 border border-border">
               <p className="font-serif text-2xl text-primary">Loiro sem corte químico</p>
               <p className="text-xs uppercase tracking-luxury text-muted-foreground mt-1">Protocolo de proteção da fibra</p>
@@ -213,7 +216,7 @@ const Index = () => {
               <Eyebrow>Quem cuida de você</Eyebrow>
               <h2 className="font-serif text-4xl sm:text-5xl text-primary leading-tight">Um salão com a <em className="text-accent">essência</em> de quem o criou</h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                O Essenza nasceu do olhar da sua proprietária para a beleza que valoriza quem você já é.
+                O Essenza nasceu do olhar de Laís Malacarne, sua proprietária, para a beleza que valoriza quem você já é.
                 Cada detalhe do espaço, dos espelhos em arco à luz quente, foi pensado para você chegar, desacelerar e sair se sentindo única.
               </p>
               <div className="mt-8">
@@ -358,6 +361,8 @@ const Index = () => {
           </div>
         </section>
 
+        <BlogPreview />
+
         {/* Localização e chamada final */}
         <section id="contato" className="container py-20 lg:py-28 scroll-mt-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -380,6 +385,9 @@ const Index = () => {
                   </a>
                 </li>
               </ul>
+              <Button asChild variant="outline" className="mt-6 rounded-none">
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"><MapPin className="w-4 h-4 mr-2" />Ver o Essenza no Google</a>
+              </Button>
               <div className="mt-10">
                 <WhatsButton message="Olá! Gostaria de agendar um horário na Essenza." label="Agendar pelo WhatsApp" />
               </div>
