@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ArrowRight, MapPin, Phone, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TeamSection } from "@/components/TeamSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ownerSalon from "@/assets/media/owner_salon_mirrors.jpg.asset.json";
 import ownerPortrait from "@/assets/media/owner_portrait.jpg.asset.json";
@@ -22,6 +23,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/essenzastudiodibellezza";
 const NAV = [
   { href: "#loiros", label: "Loiros" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#equipe", label: "Equipe" },
   { href: "#servicos", label: "Serviços" },
   { href: "#videos", label: "Vídeos" },
   { href: "#noivas", label: "Noivas" },
@@ -105,7 +107,7 @@ const Index = () => {
               <span className="block font-serif italic text-xs text-muted-foreground">Studio di Bellezza</span>
             </span>
           </a>
-          <nav className="hidden lg:flex items-center gap-8 text-xs uppercase tracking-luxury text-muted-foreground" aria-label="Menu principal">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs uppercase tracking-normal text-muted-foreground" aria-label="Menu principal">
             {NAV.map((n) => (
               <a key={n.href} href={n.href} className="hover:text-accent transition-colors">{n.label}</a>
             ))}
@@ -220,6 +222,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        <TeamSection />
 
         {/* Serviços */}
         <section id="servicos" className="container py-20 lg:py-28 scroll-mt-20">
