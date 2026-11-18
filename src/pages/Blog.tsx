@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { articleSchema, fetchArticle, fetchArticles, formatArticleDate } from "@/lib/blog";
+import { fetchArticle, fetchArticles, formatArticleDate } from "@/lib/blog";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import hair from "@/assets/gallery-hair-1.jpg";
 import owner from "@/assets/media/owner_portrait.jpg.asset.json";
